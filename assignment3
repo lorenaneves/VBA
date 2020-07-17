@@ -1,0 +1,32 @@
+Option Explicit
+
+Sub AddNumbersA()
+Dim x As Double, Y As Double, Z As Double
+x = InputBox("Enter a number to add to D4")
+Y = Range("D4")
+Z = x + Y
+Range("G12") = Z
+End Sub
+
+Sub AddNumbersB()
+Dim A As Double, B As Double, C As Double
+A = InputBox("Enter a number to add to active cell")
+B = ActiveCell
+C = A + B
+ActiveCell.Offset(-3, 2) = C
+End Sub
+
+Sub WherePutMe()
+Dim RN As Integer, CL As String, D As String
+RN = InputBox("Enter a number")
+CL = InputBox("Enter a letter")
+D = Selection.Range("B2")
+ActiveSheet.Range(CL & RN) = D
+End Sub
+
+Sub Swap()
+Dim L As Double
+L = Selection.Cells(1, 1)
+Selection.Cells(1, 1) = Selection.Cells(1, 2)
+Selection.Cells(1, 2) = L
+End Sub
